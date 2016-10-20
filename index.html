@@ -1,50 +1,54 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Android Calculator</title>
-    <link href="calc.css" type="text/css" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Android Calculator</h1>
-    <div class="main">
-      <div id="view-out">
-        <div id="view"></div>
-        <div id="answer"></div>
+<head>
+  <title>Android Calculator</title>
+  <link href="calc.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.teal-cyan.min.css">
+</head>
+<body>
+  <!-- <h1>Android Calculator</h1> -->
+  <div class="main">
+    <div id="view-out">
+      <div id="view"></div>
+      <div id="answer"></div>
+    </div>
+    <div class="numberpad">
+      <div class="numbers">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
       </div>
-      <div class="numberpad">
-          <div class="numbers">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-          </div>
 
-          <div class="right-align">
+      <div class="right-align">
 
-            <button class="clear not-btn" onclick="clr();">DELETE</button>
+        <button class="clear not-btn" onclick="backspace();">DEL</button>
 
-            <div class="operators">
-              <button>/</button>
-              <button>x</button>
-              <button>-</button>
-              <button>+</button>
-            </div>
+        <div class="operators">
+          <button>/</button>
+          <button>x</button>
+          <button>-</button>
+          <button>+</button>
+        </div>
 
-          </div>
+      </div>
 
-          <div class="bottomRow">
-            <button>.</button>
-            <button>0</button>
-            <button class="not-btn" onclick="equal();">=</button>
-          </div>
+      <div class="bottomRow">
+        <button>.</button>
+        <button>0</button>
+        <button class="not-btn" onclick="equal();">=</button>
       </div>
     </div>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/1.7.0/math.js"></script> -->
-    <script src="main.js"> </script>
-  </body>
+  </div>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/1.7.0/math.js"></script> -->
+  <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  <script src="main.js"> </script>
+</body>
 </html>

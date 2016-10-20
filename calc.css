@@ -9,6 +9,8 @@ h1 {
   color : #444;
   border : 1px solid grey;
   margin : 0 auto;
+  position: relative;
+  top: 100px;
 }
 
 #view-out {
@@ -23,13 +25,16 @@ h1 {
 
 #view {
   float:right;
+  margin-top : 30px;
 }
 
-.answer {
+#answer {
   height : 40%;
-  position : relative;
-  bottom : -60px;
-  background-color : red;
+  width : 100%;
+  bottom : 20px;
+  text-align : right;
+  position: absolute;
+  font-size : 20px;
 }
 
 .numberpad {
@@ -42,13 +47,6 @@ h1 {
   position: relative;
 }
 
-/*.view-gap {
-  //height : 40px;
-  width : auto;
-  background: transparent;
-  display : none;
-}*/
-
 button {
   height : 69px;
   width : 70px;
@@ -57,8 +55,9 @@ button {
   border : none;
   outline: none;
   font-size : 30px;
-  border-radius : 10px;
+  border-radius : 50%;
   text-align: center;
+  //background-color: red;
 }
 
 .numbers {
@@ -75,8 +74,15 @@ button {
 
 .right-align {
   position: relative;
-  top : -19em;
+  top : -22em;
 }
+
+.right-align .operators button {
+  padding-top : 30px;
+  //padding-bottom : 10px;
+}
+
+
 
 .operators {
   position: absolute;

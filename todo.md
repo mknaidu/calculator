@@ -1,4 +1,3 @@
-- Add immediate execution
 - Add material effects
 - Design Android phone around the calculator
 - Add complex equations

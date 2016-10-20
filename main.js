@@ -135,6 +135,12 @@ function clr() {
   updateEquation("", "rewrite")
 }
 
+//Remove the last character from the view
+function backspace() {
+  const eq = view.innerHTML
+  updateEquation(eq.slice(0, eq.length - 1), "rewrite")
+}
+
 //Evalurate the current equation in view
 function equal() {
   const eq = updateChar(stripComma(view.innerHTML), 'x', '*') //.replace('x', '*')
@@ -144,12 +150,7 @@ function equal() {
 function autoAnwer() {
   //const TEMP_VAL = checkValue(stripComma(view.innerHTML))
   if (getOperatorIndex(view.innerHTML) < view.innerHTML.length - 1) answerView.innerHTML = eval(updateChar(stripComma(view.innerHTML), 'x', '*'));
-}
-
-//Remove the last character from the view
-function backspace() {
-  const eq = view.innerHTML
-  updateEquation(eq.slice(0, eq.length - 1), "rewrite")
+  else answerView.innerHTML = ""
 }
 
 //Update the font size of the equation in view as it's changed
