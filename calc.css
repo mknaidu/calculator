@@ -11,13 +11,25 @@ h1 {
   margin : 0 auto;
 }
 
-#view {
+#view-out {
   height : 100px;
   width : 300px;
   background: white;
   text-align: right;
   letter-spacing: 5px;
   overflow: hidden;
+  /*direction: rtl;*/
+}
+
+#view {
+  float:right;
+}
+
+.answer {
+  height : 40%;
+  position : relative;
+  bottom : -60px;
+  background-color : red;
 }
 
 .numberpad {
@@ -30,12 +42,12 @@ h1 {
   position: relative;
 }
 
-.view-gap {
+/*.view-gap {
   //height : 40px;
   width : auto;
   background: transparent;
   display : none;
-}
+}*/
 
 button {
   height : 69px;

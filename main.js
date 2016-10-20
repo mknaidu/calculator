@@ -1,6 +1,6 @@
 //An alias to the view element
 const view = document.getElementById('view')
-
+const answerView = document.getElementById('answer')
 //Adding click event listerners to all buttons
 document.querySelectorAll('button').forEach(function(elem) {
   elem.addEventListener('click', function() { addThis(elem.textContent) })
@@ -30,7 +30,9 @@ function getOperatorIndex(equation) {
 //Get the RHS (right-hand-side) value of the current equation in view
 function getRHS(equation) {
   //slice the equation from the last operator to the end of the string, giving the RHS
+  //if(getOperatorIndex(equation))
   return equation.slice(getOperatorIndex(equation) + 1)
+  //return false;
 }
 
 function getLHS(equation) {
@@ -139,6 +141,11 @@ function equal() {
   updateEquation(eval(eq), "rewrite")
 }
 
+function autoAnwer() {
+  //const TEMP_VAL = checkValue(stripComma(view.innerHTML))
+  if (getOperatorIndex(view.innerHTML) < view.innerHTML.length - 1) answerView.innerHTML = eval(updateChar(stripComma(view.innerHTML), 'x', '*'));
+}
+
 //Remove the last character from the view
 function backspace() {
   const eq = view.innerHTML
@@ -159,4 +166,5 @@ function updateEquation(EQUATION, action) {
   if(action === "update")  view.innerHTML += EQUATION
   addComma(view.innerHTML)
   updateFontSize()
+  autoAnwer()
 }

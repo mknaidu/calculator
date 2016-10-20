@@ -1,4 +1,3 @@
-- Shift expansion to left
 - Add immediate execution
 - Add material effects
 - Design Android phone around the calculator
