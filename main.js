@@ -40,12 +40,13 @@ function getLHS(equation) {
 }
 
 //Add comma's whereever required to the current equation
-function addComma(equation) {
+function addComma(equation, view) {
   //equation = stripComma(equation)
 
   if(checkValue(stripComma(equation))) {
     view.innerHTML = rewrite(equation)
   }
+
   else {
     const RHS = getRHS(equation), LHS = getLHS(equation)
     view.innerHTML = LHS + rewrite(RHS)
@@ -148,8 +149,11 @@ function equal() {
 }
 
 function autoAnwer() {
-  //const TEMP_VAL = checkValue(stripComma(view.innerHTML))
-  if (getOperatorIndex(view.innerHTML) < view.innerHTML.length - 1) answerView.innerHTML = eval(updateChar(stripComma(view.innerHTML), 'x', '*'));
+  //if (answerView.innerHTML.length > 18) return;
+  if (getOperatorIndex(view.innerHTML) < view.innerHTML.length - 1){
+    answerView.innerHTML = eval(updateChar(stripComma(view.innerHTML), 'x', '*'))
+    addComma(answerView.innerHTML, answerView)
+  }
   else answerView.innerHTML = ""
 }
 
@@ -165,7 +169,7 @@ function updateFontSize() {
 function updateEquation(EQUATION, action) {
   if(action === "rewrite") view.innerHTML = EQUATION
   if(action === "update")  view.innerHTML += EQUATION
-  addComma(view.innerHTML)
+  addComma(view.innerHTML, view)
   updateFontSize()
   autoAnwer()
 }
