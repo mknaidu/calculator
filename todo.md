@@ -1,3 +1,4 @@
+- Fix mobile view
 - Add material effects
 - Design Android phone around the calculator
 - Add complex equations

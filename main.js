@@ -2,9 +2,13 @@
 const view = document.getElementById('view')
 const answerView = document.getElementById('answer')
 //Adding click event listerners to all buttons
-document.querySelectorAll('button').forEach(function(elem) {
-  elem.addEventListener('click', function() { addThis(elem.textContent) })
-})
+const buttons = document.querySelectorAll('button');
+for(let i = 0; i < buttons.length; i++) {
+  let elem = buttons[i];
+  elem.addEventListener('click', function() {
+    addThis(elem.textContent)
+  })
+}
 
 //Check if provided value is valid equation
 function checkValue(equation) {
@@ -149,7 +153,7 @@ function equal() {
 }
 
 function autoAnwer() {
-  //if (answerView.innerHTML.length > 18) return;
+  if (answerView.innerHTML.length > 18) return;
   if (getOperatorIndex(view.innerHTML) < view.innerHTML.length - 1){
     answerView.innerHTML = eval(updateChar(stripComma(view.innerHTML), 'x', '*'))
     addComma(answerView.innerHTML, answerView)
