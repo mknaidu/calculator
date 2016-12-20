@@ -1,97 +1,85 @@
-h1 {
-  text-align : center;
-}
-
 .main {
-  height : 10em;
-  width : 300px;
+  height : 31em;
+  width : 20em;
   font-family : Helvetica;
   color : #444;
   border : 1px solid grey;
-  margin : 0 auto;
-  position: relative;
-  top: 100px;
+  margin : 5% auto;
+  user-select : none;
 }
 
-#view-out {
-  height : 120px;
-  width : 300px;
-  background: white;
+.view {
+  height : 37%;
   text-align: right;
   letter-spacing: 5px;
   overflow: hidden;
 }
 
+#view-out {
+  height : 70%;
+}
+
 #view {
-  float:right;
-  margin-top : 30px;
+  float: right;
+  position: relative;
+  bottom : -20%;
+  padding: 8% 0;
+  line-height: 20px;
 }
 
 #answer-auto {
-  height : 40%;
-  width : 100%;
-  bottom : 10px;
-  text-align : right;
-  letter-spacing: 5px;
-  position: absolute;
-  font-size : 18px;
-  overflow: hidden;
-  color : #B3B7BE;
+  height : 30%;
 }
 
 #answer {
   float: right;
+  font-size : 20px;
+  color : #B3B7BE;
 }
 
 .numberpad {
-  height : 300px;
-  width : 300px;
-  background : #555;
-  border : 1px solid grey;
-  border-top : none;
-  margin-left : -1px;
-  position: relative;
+  height : 63%;
+  width: 100%;
+  background-color : #555;
+  display : flex;
 }
 
 button {
-  height : 69px;
-  width : 70px;
+  height : 3.5em;
+  width : 3em;
   color : #EEE;
   background : transparent;
   border : none;
-  outline: none;
-  font-size : 30px;
-  border-radius : 50%;
-  text-align: center;
-  /*background-color: red;*/
+  outline : none;
 }
 
 .numbers {
   background : #222;
-  width : 80%;
+  min-width : 75%;
   height : 100%;
-  margin : 0px;
-  color : red;
 }
 
+/*Not sure if this is needed*/
 .numbers button {
-  font-size: 22px;
+  font-size: 1.5em;
 }
 
 .right-align {
-  position: relative;
-  top : -22em;
+  min-width: 25%;
+  text-align: center;
 }
 
-.right-align .operators button {
-  padding-top : 30px;
-  /*padding-bottom : 10px;*/
+.right-align button {
+  text-align: center;
+  font-size: 1.4em;
+  margin-top : -14px;
 }
 
+.clear {
+  padding-top: 1em;
+}
 
-
-.operators {
-  position: absolute;
+/*.operators {
   right : 0px;
   top : 3em;
   background : transparent;
@@ -104,57 +92,61 @@ button {
   width : 40px;
   background : transparent;
   border : none;
-  font-size : 25px;
+  font-size : 1.2em;
   border-radius : 10px;
   padding-top : 25px;
   margin-left : 10px;
-}
-
-.clear {
-  position: absolute;
-  right : 0px;
-  background : transparent;
-  width : 20%;
-  text-align : center;
-  font-size : 12px;
-}
+}*/
 
 .bottomRow {
-  background : yellow;
-  height: 20%;
+  margin-top: -1em;
+  /*display: none;*/
+  /*background-color: yellow;*/
+  /*display: flex;*/
+  /*align-items: flex-start;*/
+  /*height: 20%;
   width: 80%;
-  background: transparent;
-  position: relative;
-  top: -6em;
-  font-size : 16px;
+  /*background: transparent;*/
+  /*top: -6em;*/
+  /*font-size : 16px;*/
 }
 
-@media (max-device-width: 600px) {
+.bottomRow button {
+  /*color : red;*/
+}
+
+/*@media (max-device-width: 600px) {
   .main {
-    /*margin-top : -6em;*/
     width : 100%;
     height : 100%;
+    top : 0;
   }
 
-  #view {
-    margin-top : -30px;
-  }
-  
   #view-out {
     width : 100%;
-    height: 20vh
+    height: 40vh
   }
-  
+
+  #answer-auto {
+    width : 100%;
+    height : 10vh;
+    border : 2px solid red;
+    top : 10px;
+    background-color: red;
+  }
+
   .numberpad {
     width : 100%;
     height : 100%;
-    /*margin-bottom : 0px;*/
+    visibility: hidden;
+    margin-bottom : 0px;
   }
 
   button {
     width : 30%;
     height : 5em;
     font-size : 40px;
+    visibility: hidden;
   }
 
   .numbers button {
@@ -163,7 +155,6 @@ button {
   }
 
   .right-align {
-    /*background: red;*/
     height : 100%;
     width : 20%;
     position : absolute;
@@ -184,13 +175,13 @@ button {
     text-align : center;
     font-size : 40px;
   }
-  
+
   .bottomRow {
-    /*height: 10%;*/
-    /*width: 80%;*/
-    /*background: transparent;*/
-    /*position: relative;*/
+    width: 80%;
+    height: 10%;
+    background: transparent;
+    position: relative;
     margin-top: -20em;
-    /*font-size : 50px;*/
+    font-size : 50px;
   }
-}
+}*/

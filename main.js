@@ -18,14 +18,14 @@ function checkValue(equation) {
 
 //Get the operators present in the equation
 function getOperators(equation) {
-  const OPERATOR_REGEX = /(\/|\x|\-|\+)/g
+  const OPERATOR_REGEX = /(\÷|\x|\-|\+)/g
   return equation.match(OPERATOR_REGEX)
 }
 
 //Get the index of the last operator in the equation
 function getOperatorIndex(equation) {
   //Collect all operators from the equation
-  const MATCHED_VALUE = getOperators(equation)
+  const MATCHED_VALUE =   getOperators(equation)
   //Pop the last operator from the matched values and get it's index from the right of the equation
   if (MATCHED_VALUE) return equation.lastIndexOf(MATCHED_VALUE.pop())
   return NaN
@@ -34,9 +34,7 @@ function getOperatorIndex(equation) {
 //Get the RHS (right-hand-side) value of the current equation in view
 function getRHS(equation) {
   //slice the equation from the last operator to the end of the string, giving the RHS
-  //if(getOperatorIndex(equation))
   return equation.slice(getOperatorIndex(equation) + 1)
-  //return false;
 }
 
 function getLHS(equation) {
@@ -90,6 +88,7 @@ function stripComma(equation) {
 function addThis(value) {
   let EQUATION = view.innerHTML
   if(value === '*') value = 'x'
+  if(value === '/') value = '÷';
 
   //If view is empty and the key pressed is '-', just update the view with '-'
   //This is being done because I couldn't figure out how to select the '-' at the start of an equation on it's own, when it's optional
@@ -128,7 +127,6 @@ function addThis(value) {
 //Add keybord listerners event to the window
 window.addEventListener("keydown", function (e) {
   const key = e.key, keys = ['/', '*', '-', '+', '.']
-  //if(key === '*') key = 'x'
   if(!isNaN(key) || keys.indexOf(key) !== -1) addThis(key)
   else if(key === 'Enter') equal()
   else if(key === 'Delete') clr()
@@ -148,14 +146,14 @@ function backspace() {
 
 //Evalurate the current equation in view
 function equal() {
-  const eq = updateChar(stripComma(view.innerHTML), 'x', '*') //.replace('x', '*')
+  const eq = updateChar(updateChar(stripComma(view.innerHTML), 'x', '*'), '÷', '/');
+  //eq = updateChar(stripComma(view.innerHTML), '÷', '/');
   updateEquation(eval(eq), "rewrite")
 }
 
 function autoAnwer() {
-  if (answerView.innerHTML.length > 18) return;
   if (getOperatorIndex(view.innerHTML) < view.innerHTML.length - 1){
-    answerView.innerHTML = eval(updateChar(stripComma(view.innerHTML), 'x', '*'))
+    answerView.innerHTML = eval(updateChar(updateChar(stripComma(view.innerHTML), 'x', '*'), '÷', '/'))
     addComma(answerView.innerHTML, answerView)
   }
   else answerView.innerHTML = ""
@@ -171,8 +169,9 @@ function updateFontSize() {
 
 //Update the equation in the view
 function updateEquation(EQUATION, action) {
-  if(action === "rewrite") view.innerHTML = EQUATION
-  if(action === "update")  view.innerHTML += EQUATION
+  // updateChar(EQUATION, '/', '÷');
+  if(action === "rewrite") view.innerHTML = EQUATION;
+  if(action === "update") view.innerHTML += EQUATION
   addComma(view.innerHTML, view)
   updateFontSize()
   autoAnwer()

@@ -4,6 +4,7 @@
 <head>
   <title>Android Calculator</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no" />
   <link rel="icon" type="image/png" href="./img/favicon.png">
   <link href="calc.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -34,6 +35,12 @@
         <button>1</button>
         <button>2</button>
         <button>3</button>
+
+        <div class="bottomRow">
+          <button>.</button>
+          <button>0</button>
+          <button class="not-btn" onclick="equal();">=</button>
+        </div>
       </div>
 
       <div class="right-align">
@@ -41,7 +48,7 @@
         <button class="clear not-btn" onclick="backspace();">DEL</button>
 
         <div class="operators">
-          <button>/</button>
+          <button>&#247;</button>
           <button>x</button>
           <button>-</button>
           <button>+</button>
@@ -49,11 +56,11 @@
 
       </div>
 
-      <div class="bottomRow">
+      <!-- <div class="bottomRow">
         <button>.</button>
         <button>0</button>
         <button class="not-btn" onclick="equal();">=</button>
-      </div>
+      </div> -->
 
     </div>
 
