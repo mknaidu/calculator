@@ -1,3 +1,7 @@
+body {
+  height : auto;
+}
+
 .main {
   height : 31em;
   width : 20em;
@@ -70,6 +74,7 @@ button {
 }
 
 .right-align button {
+  width : 100%;
   text-align: center;
   font-size: 1.4em;
   margin-top : -14px;
@@ -79,109 +84,24 @@ button {
   padding-top: 1em;
 }
 
-/*.operators {
-  right : 0px;
-  top : 3em;
-  background : transparent;
-  width : 20%;
-  height : 100%;
-}
-
-.operators button {
-  height : 40px;
-  width : 40px;
-  background : transparent;
-  border : none;
-  font-size : 1.2em;
-  border-radius : 10px;
-  padding-top : 25px;
-  margin-left : 10px;
-}*/
-
 .bottomRow {
   margin-top: -1em;
-  /*display: none;*/
-  /*background-color: yellow;*/
-  /*display: flex;*/
-  /*align-items: flex-start;*/
-  /*height: 20%;
-  width: 80%;
-  /*background: transparent;*/
-  /*top: -6em;*/
-  /*font-size : 16px;*/
 }
 
-.bottomRow button {
-  /*color : red;*/
-}
-
-/*@media (max-device-width: 600px) {
+@media (max-device-width: 600px) {
   .main {
-    width : 100%;
-    height : 100%;
-    top : 0;
-  }
-
-  #view-out {
-    width : 100%;
-    height: 40vh
-  }
-
-  #answer-auto {
-    width : 100%;
-    height : 10vh;
-    border : 2px solid red;
-    top : 10px;
-    background-color: red;
+    margin-top: 0em;
+    width : 100vw;
+    border : none;
+    height : 100vh;
   }
 
   .numberpad {
-    width : 100%;
-    height : 100%;
-    visibility: hidden;
-    margin-bottom : 0px;
+    text-align: center;
   }
 
   button {
     width : 30%;
-    height : 5em;
-    font-size : 40px;
-    visibility: hidden;
+    height : 3.8em;
   }
-
-  .numbers button {
-    margin : 10px;
-    font-size : 40px;
-  }
-
-  .right-align {
-    height : 100%;
-    width : 20%;
-    position : absolute;
-    margin-top : 22em;
-    right : 0px;
-  }
-
-  .right-align button {
-    width : 100%;
-    height : 5em;
-    text-align : center;
-    font-size : 40px;
-  }
-
-  .operators button {
-    width : 100%;
-    height : 5em;
-    text-align : center;
-    font-size : 40px;
-  }
-
-  .bottomRow {
-    width: 80%;
-    height: 10%;
-    background: transparent;
-    position: relative;
-    margin-top: -20em;
-    font-size : 50px;
-  }
-}*/
+}
